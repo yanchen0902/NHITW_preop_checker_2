@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "術前高風險藥物警示與列印",
+  "version": "1.0.0",
+  "description": "於健保雲端西藥頁面中，自動掃描並過濾近三個月的 SGLT2、抗凝血劑等術前高風險藥物，並提供去識別化列印功能。",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_icon": "icon128.png"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.nhi.gov.tw/*",
+        "http://*.nhi.gov.tw/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "style.css"
+      ]
+    }
+  ]
+}

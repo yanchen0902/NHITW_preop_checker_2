@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>健保雲端西藥查詢系統 (測試模擬版)</title>
+    <style>
+        body { font-family: "微軟正黑體", sans-serif; background-color: #f0f0f0; margin: 0; padding: 20px; }
+        .header { background-color: #2c5282; color: white; padding: 15px; border-radius: 8px 8px 0 0; }
+        .patient-info { background-color: #fff; padding: 15px; border: 1px solid #ddd; border-top: none; }
+        .patient-info span { margin-right: 20px; font-weight: bold; color: #333; }
+        .content { margin-top: 20px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #cbd5e0; padding: 10px; text-align: left; }
+        th { background-color: #edf2f7; color: #4a5568; }
+        tr:nth-child(even) { background-color: #f7fafc; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h2>全民健康保險雲端藥歷系統 - 西藥資訊</h2>
+    </div>
+    
+    <div class="patient-info">
+        <!-- 模擬病患個資 (Ext_PName / Ext_PId 或類似的結構) -->
+        <span id="MainContent_lbl_Id">病歷號：0001234</span>
+        <span id="MainContent_lbl_Name">姓名：陳大明</span>
+        <span>身分證字號/居留證號：A123456789</span>
+        <span>出生日期：060/05/20</span>
+        <span>性別：男</span>
+    </div>
+
+    <div class="content">
+        <h3>就醫紀錄與用藥明細</h3>
+        <p style="color:#666; font-size: 14px;">(下方日期會由 JavaScipt 自動產生為「今天起的近三個月」模擬資料，以確保測試永遠不漏接)</p>
+        
+        <table id="med-table">
+            <thead>
+                <tr>
+                    <th>項次</th>
+                    <th>來源</th>
+                    <th>主診斷</th>
+                    <th>藥品名稱</th>
+                    <th>就醫日期</th>
+                    <th>成分名稱</th>
+                    <th>藥品用量</th>
+                    <th>用法用量</th>
+                    <th>給藥日數</th>
+                    <th>藥品規格量</th>
+                    <th>ATC5代碼</th>
+                </tr>
+            </thead>
+            <tbody id="med-tbody">
+                <!-- Data inserted here by JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // 自動依照當下時間產生對應的模擬明國年份與日期，確保永遠可以測試「三個月內」的資料
+        function getRocDate(daysAgo) {
+            const date = new Date();
+            date.setDate(date.getDate() - daysAgo);
+            const rocYear = date.getFullYear() - 1911;
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${rocYear}/${month}/${day}`;
+        }
+
+        const mockData = [
+            // 1. 觸發 4天 的 SGLT2
+            { source: '台大醫院', diag: 'E11.9 第二型糖尿病', name: 'STEGLUJAN (15/100MG)', ing: 'ERTUGLIFLOZIN, SITAGLIPTIN', atc: 'A10BD23', daysAgo: 5 },
+            
+            // 2. 觸發 3天 的 SGLT2
+            { source: '診所', diag: 'E11.9', name: 'FORXIGA 10MG', ing: 'DAPAGLIFLOZIN', atc: 'A10BK01', daysAgo: 10 },
+            
+            // 3. 觸發 P2Y12 (5天)
+            { source: '台北榮總', diag: 'I25.9 慢性缺血性心臟病', name: 'PLAVIX F.C TAB 75MG', ing: 'CLOPIDOGREL', atc: 'B01AC04', daysAgo: 30 },
+            
+            // 4. 一般感冒藥 (不會被抓到)
+            { source: '家醫診所', diag: 'J00 感冒', name: 'PANADOL 500MG', ing: 'ACETAMINOPHEN', atc: 'N02BE01', daysAgo: 45 },
+            
+            // 5. 觸發 NOAC (2天)
+            { source: '長庚醫院', diag: 'I48 心房顫動', name: 'ELIQUIS 5MG', ing: 'APIXABAN', atc: 'B01AF02', daysAgo: 15 },
+            
+            // 6. 觸發 ACEI/ARB (高血壓)
+            { source: '心臟科診所', diag: 'I10 高血壓', name: 'DIOVAN 80MG', ing: 'VALSARTAN', atc: 'C09CA03', daysAgo: 40 },
+
+            // 7. 過期資料：大於 90 天 (應被過濾掉，不會出現在彈出視窗)
+            { source: '台大醫院', diag: 'I48 心房顫動', name: 'XARELTO 20MG', ing: 'RIVAROXABAN', atc: 'B01AF01', daysAgo: 120 },
+
+            // 8. 觸發 GLP-1 RA
+            { source: '新陳代謝科', diag: 'E11.9', name: 'OZEMPIC 0.25MG', ing: 'SEMAGLUTIDE', atc: 'A10BJ05', daysAgo: 60 }
+        ];
+
+        const tbody = document.getElementById('med-tbody');
+        
+        mockData.forEach((row, index) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${row.source}</td>
+                <td>${row.diag}</td>
+                <td>${row.name}</td>
+                <td>${getRocDate(row.daysAgo)}</td>
+                <td>${row.ing}</td>
+                <td>1.0</td>
+                <td>QD</td>
+                <td>28</td>
+                <td>1#</td>
+                <td>${row.atc}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    </script>
+</body>
+</html>
