@@ -1,5 +1,7 @@
 # 🇹🇼 NHITW Pre-op Checker (台灣健保雲端術前高風險藥物警示與列印工具)
 
+[![CI](https://github.com/yanchen0902/NHITW_preop_checker_2/actions/workflows/ci.yml/badge.svg)](https://github.com/yanchen0902/NHITW_preop_checker_2/actions/workflows/ci.yml)
+
 這是一個專為台灣醫療專業人員打造的 Chrome 擴充功能。能夠在「健保雲端藥歷系統」中，自動掃描並過濾近三個月的術前高風險藥物（如：抗凝血劑、SGLT2 抑制劑、ACEi/ARB 等），並提供**一鍵產出「去識別化」精美術前評估單**的功能。
 
 ## ✨ 核心特色
