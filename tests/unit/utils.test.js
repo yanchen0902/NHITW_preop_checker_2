@@ -50,4 +50,21 @@ describe('matchAlert', () => {
     const alert = matchAlert('PANADOL', 'N02BE01', 'PARACETAMOL');
     expect(alert).toBeNull();
   });
+
+  it('should prioritize SGLT2 over Metformin for combo pills', () => {
+    // SGLT2 + Metformin combo (e.g. XIGDUO, SYNJARDY)
+    // Both SGLT2 and Metformin are in the ingredient string
+    const alert = matchAlert('SYNJARDY', 'A10BD20', 'EMPAGLIFLOZIN/METFORMIN');
+    expect(alert).not.toBeNull();
+    // It must trigger the SGLT2 alert (3 days) instead of Metformin (1 day)
+    expect(alert.category).toBe('SGLT2i');
+    expect(alert.days).toBe('3 天');
+  });
+
+  it('should fallback to Metformin if only Metformin is present', () => {
+    const alert = matchAlert('GLUCOPHAGE', 'A10BA02', 'METFORMIN');
+    expect(alert).not.toBeNull();
+    expect(alert.category).toBe('Metformin');
+    expect(alert.days).toBe('1 天');
+  });
 });

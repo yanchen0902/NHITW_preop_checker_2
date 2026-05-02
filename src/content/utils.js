@@ -54,11 +54,11 @@ export function getAnonymizedPatientInfo() {
   let id = "";
 
   const nameEl = document.querySelector('.member-info .name');
-  if (nameEl) name = nameEl.innerText.trim();
+  if (nameEl) name = nameEl.textContent.trim();
 
   const idEl = document.querySelector('.member-info .idno');
   if (idEl) {
-    const fullText = idEl.innerText.trim();
+    const fullText = idEl.textContent.trim();
     const match = fullText.match(/[A-Z][12\d][*\d]{7}\d/);
     if (match) {
       id = match[0];
@@ -69,7 +69,7 @@ export function getAnonymizedPatientInfo() {
 
   if (!name) {
     const backupNameEl = document.querySelector('span[id*="Name"]');
-    if (backupNameEl) name = backupNameEl.innerText.trim();
+    if (backupNameEl) name = backupNameEl.textContent.trim();
   }
 
   if (!name) name = "未知病患";
@@ -77,7 +77,11 @@ export function getAnonymizedPatientInfo() {
 
   let anonName = name;
   if (name.length >= 2 && !name.includes('〇') && !name.includes('*')) {
-    anonName = name.substring(0, 1) + '〇' + name.substring(2);
+    if (name.length === 2) {
+      anonName = name.charAt(0) + '〇';
+    } else {
+      anonName = name.charAt(0) + '〇'.repeat(name.length - 2) + name.charAt(name.length - 1);
+    }
   }
 
   let anonId = id;
