@@ -73,7 +73,7 @@ export function getAnonymizedPatientInfo() {
   }
 
   if (!name) name = "未知病患";
-  if (!id) id = "A123456789";
+  if (!id) id = "**********";
 
   let anonName = name;
   if (name.length >= 2 && !name.includes('〇') && !name.includes('*')) {
