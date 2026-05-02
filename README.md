@@ -39,11 +39,30 @@
 - `npm run test`：執行 Vitest 單元測試。
 - `npm run lint` / `npm run format`：執行 ESLint 與 Prettier 進行程式碼品質檢查與格式化。
 
-**核心目錄結構：**
-- `src/content/rules.js`：高風險藥物規則表 (ATC 代碼與天數)。
-- `src/content/scanner.js`：網頁 DOM 表格掃描邏輯。
-- `src/content/ui.js`：負責產生浮動按鈕與列印評估單 Modal (具備 XSS 防護)。
-- `src/content/utils.js`：日期計算與資料去識別化工具。
+**核心目錄結構 (Canonical Structure)：**
+```text
+NHITW_preop_checker_2/
+├── .github/                 ← CI/CD 工作流與 Issue 模板
+├── public/                  ← 靜態資源 (圖示、列印頁面)
+│   ├── icon{16,32,48,128}.png
+│   └── med_record.html
+├── src/                     ← 核心原始碼
+│   └── content/
+│       ├── rules.js         ← 高風險藥物規則表 (ATC 代碼與天數)
+│       ├── scanner.js       ← 網頁 DOM 表格掃描邏輯
+│       ├── ui.js            ← 負責產生浮動按鈕與列印評估單 Modal (具備 XSS 防護)
+│       └── utils.js         ← 日期計算與資料去識別化工具
+├── tests/                   ← 測試程式碼
+│   ├── e2e/                 ← Playwright E2E 模擬測試
+│   ├── fixtures/
+│   │   └── mock_medcloud.html ← 開發用 Mock 頁面
+│   └── unit/                ← Vitest 單元測試
+├── dist/                    ← 擴充功能打包產物 (由 Vite 產生，不進版控)
+├── docs/                    ← 開發與上架說明文件
+├── manifest.json            ← 擴充功能設定檔 (Vite 進入點)
+├── package.json             
+└── README.md
+```
 
 ## ⚠️ 免責聲明 (Disclaimer)
 

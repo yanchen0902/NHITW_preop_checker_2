@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 test('should display floating button, open modal, and show correct alerts', async ({ page }) => {
-  const mockHtmlPath = path.resolve(__dirname, '../../mock_medcloud.html');
+  const mockHtmlPath = path.resolve(__dirname, '../fixtures/mock_medcloud.html');
   const mockHtml = fs.readFileSync(mockHtmlPath, 'utf8');
 
   // Find the generated JS bundle in dist/assets
