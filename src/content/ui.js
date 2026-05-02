@@ -12,6 +12,20 @@ export function createFloatingButton(onClickHandler) {
   document.body.appendChild(btn);
 }
 
+function escapeHTML(str) {
+  if (typeof str !== 'string') return str;
+  return str.replace(/[&<>'"]/g, 
+    tag => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+    }[tag])
+  );
+}
+
+
 export function renderModal(patientInfo, drugs) {
   const oldModal = document.getElementById('preop-modal-backdrop');
   if (oldModal) oldModal.remove();
@@ -26,15 +40,15 @@ export function renderModal(patientInfo, drugs) {
   } else {
     const rowsHtml = drugs.map(d => `
       <tr>
-        <td><span class="preop-tag">${d.rule.days}</span></td>
+        <td><span class="preop-tag">${escapeHTML(d.rule.days)}</span></td>
         <td>
-          ${d.rule.cht ? `<strong>${d.rule.cht}</strong><br/>` : ''}
-          <span style="font-size: 0.9em; color: #4a5568;">${d.medicineName}</span>
+          ${d.rule.cht ? `<strong>${escapeHTML(d.rule.cht)}</strong><br/>` : ''}
+          <span style="font-size: 0.9em; color: #4a5568;">${escapeHTML(d.medicineName)}</span>
         </td>
-        <td class="hide-in-print">${d.atcCode}</td>
-        <td>${d.rule.category}</td>
-        <td>${d.date}</td>
-        <td>${d.rule.note}</td>
+        <td class="hide-in-print">${escapeHTML(d.atcCode)}</td>
+        <td>${escapeHTML(d.rule.category)}</td>
+        <td>${escapeHTML(d.date)}</td>
+        <td>${escapeHTML(d.rule.note)}</td>
       </tr>
     `).join('');
 
@@ -73,9 +87,9 @@ export function renderModal(patientInfo, drugs) {
         <div class="preop-patient-info">
           <table class="patient-info-table">
             <tr>
-              <th>病患姓名</th><td>${patientInfo.name}</td>
-              <th>身分證字號</th><td>${patientInfo.id}</td>
-              <th>評估日期</th><td>${patientInfo.originalDate}</td>
+              <th>病患姓名</th><td>${escapeHTML(patientInfo.name)}</td>
+              <th>身分證字號</th><td>${escapeHTML(patientInfo.id)}</td>
+              <th>評估日期</th><td>${escapeHTML(patientInfo.originalDate)}</td>
             </tr>
           </table>
         </div>

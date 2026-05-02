@@ -19,20 +19,29 @@
 ### 方法二：開發者模式 (從 GitHub 載入)
 如果您想直接使用最新原始碼，或是自行修改字典檔：
 1. 將此專案 Clone 或下載 ZIP 檔並解壓縮到您的電腦中。
-2. 打開 Chrome 瀏覽器，在網址列輸入 `chrome://extensions/` 並進入。
-3. 開啟右上角的 **「開發人員模式 (Developer mode)」**。
-4. 點擊左上角的 **「載入未封裝項目 (Load unpacked)」**。
-5. 選擇您剛剛解壓縮的資料夾。
-6. 完成！您現在可以在健保雲端系統中使用它了。
+2. 請先安裝 [Node.js](https://nodejs.org/)。
+3. 在終端機 (Terminal) 中進入專案資料夾，執行 `npm install` 安裝相依套件。
+4. 執行 `npm run build` 編譯專案，這會產生一個 `dist/` 資料夾。
+5. 打開 Chrome 瀏覽器，在網址列輸入 `chrome://extensions/` 並進入。
+6. 開啟右上角的 **「開發人員模式 (Developer mode)」**。
+7. 點擊左上角的 **「載入未封裝項目 (Load unpacked)」**。
+8. 選擇剛剛編譯出來的 **`dist/`** 資料夾。
+9. 完成！您現在可以在健保雲端系統中使用它了。
 
 ## 🛠️ 開發與技術架構
 
-本專案使用原生 JavaScript、HTML、CSS 開發，符合 Chrome Extension Manifest V3 規範。
+本專案使用 **Vite** 進行模組化打包，符合 Chrome Extension Manifest V3 規範。
 
-- `manifest.json`：擴充功能設定檔與權限宣告。
-- `content.js`：核心邏輯，負責在健保網頁上讀取 DOM 並進行藥物字串比對。
-- `style.css`：注入健保網頁的自訂樣式（例如高光標籤與按鈕設計）。
-- `med_record.html`：獨立的列印排版頁面，接收資料後產生優雅的報表。
+- `npm run dev`：啟動開發模式，當您修改 `src/` 內的程式碼時，Vite 會自動進行 Hot Reload (需重新整理擴充功能載入的頁面)。
+- `npm run build`：建立可用於上架的正式版本 (輸出至 `dist/`)。
+- `npm run test`：執行 Vitest 單元測試。
+- `npm run lint` / `npm run format`：執行 ESLint 與 Prettier 進行程式碼品質檢查與格式化。
+
+**核心目錄結構：**
+- `src/content/rules.js`：高風險藥物規則表 (ATC 代碼與天數)。
+- `src/content/scanner.js`：網頁 DOM 表格掃描邏輯。
+- `src/content/ui.js`：負責產生浮動按鈕與列印評估單 Modal (具備 XSS 防護)。
+- `src/content/utils.js`：日期計算與資料去識別化工具。
 
 ## ⚠️ 免責聲明 (Disclaimer)
 
