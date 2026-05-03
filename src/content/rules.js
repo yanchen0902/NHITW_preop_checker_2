@@ -42,10 +42,10 @@ export const PRE_OP_ALERTS = [
   { name: 'ACEI/ARB', atc: 'C09', days: '手術當天早上暫停服用', category: 'ACEI/ARB', note: '降血壓用藥', cht: '血壓藥 (ACEI/ARB)' },
 
   // --- GLP-1 類藥物 (Aspiration Risk) ---
-  { name: 'OZEMPIC', atc: 'A10BJ05', days: '7 天', category: 'GLP-1 RA', note: '前一日晚間清流質飲食', cht: '胰妥讚' },
-  { name: 'TRULICITY', atc: 'A10BJ05', days: '7 天', category: 'GLP-1 RA', note: '前一日晚間清流質飲食', cht: '易週糖' },
-  { name: 'MOUNJARO', atc: 'A10BJ07', days: '7 天', category: 'GLP-1 RA', note: '前一日晚間清流質飲食', cht: '蒙加若' },
-  { name: 'SAXENDA', atc: 'A10BJ02', days: '7 天', category: 'GLP-1 RA', note: '前一日晚間清流質飲食', cht: '善纖達' },
-  { name: 'RYBELSUS', atc: 'A10BJ05', days: '7 天', category: 'GLP-1 RA', note: '前一日晚間清流質飲食', cht: '瑞倍適' },
-  { name: 'VICTOZA', atc: 'A10BJ02', days: '7 天', category: 'GLP-1 RA', note: '前一日晚間清流質飲食', cht: '胰妥善' }
+  { name: 'OZEMPIC', atc: 'A10BJ05', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '胰妥讚' },
+  { name: 'TRULICITY', atc: 'A10BJ05', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '易週糖' },
+  { name: 'MOUNJARO', atc: 'A10BJ07', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '蒙加若' },
+  { name: 'SAXENDA', atc: 'A10BJ02', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '善纖達' },
+  { name: 'RYBELSUS', atc: 'A10BJ05', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '瑞倍適' },
+  { name: 'VICTOZA', atc: 'A10BJ02', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '胰妥善' }
 ];

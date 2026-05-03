@@ -14,7 +14,7 @@ export function createFloatingButton(onClickHandler) {
 
 function escapeHTML(str) {
   if (typeof str !== 'string') return str;
-  return str.replace(/[&<>'"]/g, 
+  return str.replace(/[&<>'"]/g,
     tag => ({
       '&': '&amp;',
       '<': '&lt;',
@@ -97,9 +97,9 @@ export function renderModal(patientInfo, drugs) {
         <!-- GLP-1 Specific Alert -->
         ${drugs.some(d => d.rule.category === 'GLP-1 RA') ? `
         <div class="preop-clinical-alert">
-          <strong>⚠️ 【高度 Aspiration 風險警示】</strong><br>
+          <strong>⚠️ 【高度吸入性肺炎 風險警示】</strong><br>
           偵測到 GLP-1 類藥物 (如 Ozempic, Trulicity)。除建議停藥 7 天外，<br>
-          <strong>手術前一日晚間建議僅能進食清流質飲食</strong>。
+          <strong>手術前一日建議僅能進食清流質飲食</strong>。
         </div>` : ''}
 
         <!-- Main Drug Table -->
