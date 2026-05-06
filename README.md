@@ -22,7 +22,7 @@
 | **SGLT2i** | Dapagliflozin | Forxiga (福適佳) | A10BK01 | 3 天 | |
 | **SGLT2i** | Empagliflozin | Jardiance (恩排糖) | A10BK03 | 3 天 | |
 | **SGLT2i** | Canagliflozin | Canaglu (可拿糖), Invokana (穩可糖) | A10BK02 | 3 天 | |
-| **SGLT2i** | Empagliflozin/Linagliptin | Glyxambi (恩格醣) | A10BD19 | 3 天 | 複方 |
+| **SGLT2i** | Empagliflozin/Linagliptin | Glyxambi (糖順平) | A10BD19 | 3 天 | 複方 |
 | **SGLT2i** | Dapagliflozin/Saxagliptin | Qtern (控糖穩) | A10BD21 | 3 天 | 複方 |
 | **SGLT2i** | Dapagliflozin/Metformin | Xigduo (釋多糖) | A10BD15 | 3 天 | 複方 |
 | **SGLT2i** | Empagliflozin/Metformin | Synjardy (恩美糖) | A10BD20 | 3 天 | 複方 |
@@ -35,7 +35,7 @@
 | **P2Y12** | Prasugrel | Efient (抑凝安) | B01AC22 | 7 天 | (規範標註 5-7 天) |
 | **P2Y12** | Clopidogrel | Plavix (保栓通) | B01AC04 | 5 天 | (規範標註 5-7 天) |
 | **P2Y12** | Ticagrelor | Brilinta (百無凝) | B01AC24 | 5 天 | (規範標註 5-7 天) |
-| **VKA** | Warfarin | Cofarin (可化凝) | B01AA03 | 5-7 天 | |
+| **VKA** | Warfarin | Cofarin (可化凝) | B01AA03 | 5-7 天 | 高風險患者需考慮安排 Heparin bridge |
 | **Antiplatelet**| Aspirin | Bokey (伯基), Aspirin (阿斯匹靈) | B01AC06 | 5-7 天/不需停 | 依手術風險而定 |
 | **Antiplatelet**| Cilostazol | Pletaal (普達) | B01AC23 | 3 天 | |
 | **Antiplatelet**| Dipyridamole | Sandel (順達) | B01AC07 | 3 天 | |

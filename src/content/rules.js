@@ -5,7 +5,7 @@ export const PRE_OP_ALERTS = [
   { name: 'JARDIANCE', atc: 'A10BK03', days: '3 天', category: 'SGLT2i', note: 'Empagliflozin', cht: '恩排糖' },
   { name: 'CANAGLU', atc: 'A10BK02', days: '3 天', category: 'SGLT2i', note: 'Canagliflozin', cht: '可拿糖' },
   { name: 'INVOKANA', atc: 'A10BK02', days: '3 天', category: 'SGLT2i', note: 'Canagliflozin', cht: '穩可糖' },
-  { name: 'GLYXAMBI', atc: 'A10BD19', days: '3 天', category: 'SGLT2i', note: 'Empagliflozin/Linagliptin', cht: '恩格醣' },
+  { name: 'GLYXAMBI', atc: 'A10BD19', days: '3 天', category: 'SGLT2i', note: 'Empagliflozin/Linagliptin', cht: '糖順平' },
   { name: 'QTERN', atc: 'A10BD21', days: '3 天', category: 'SGLT2i', note: 'Dapagliflozin/Saxagliptin', cht: '控糖穩' },
   { name: 'XIGDUO', atc: 'A10BD15', days: '3 天', category: 'SGLT2i', note: 'Dapagliflozin/Metformin', cht: '釋多糖' },
   { name: 'SYNJARDY', atc: 'A10BD20', days: '3 天', category: 'SGLT2i', note: 'Empagliflozin/Metformin', cht: '恩美糖' },
@@ -17,7 +17,7 @@ export const PRE_OP_ALERTS = [
   { name: 'BRILINTA', atc: 'B01AC24', days: '5 天', category: 'P2Y12', note: 'Ticagrelor (規範標註 5-7 天)', cht: '百無凝' },
 
   // --- VKA & 抗血小板 ---
-  { name: 'COFARIN', atc: 'B01AA03', days: '5-7 天', category: 'VKA', note: 'Warfarin', cht: '可化凝' },
+  { name: 'COFARIN', atc: 'B01AA03', days: '5-7 天', category: 'VKA', note: 'Warfarin (高風險患者需考慮安排 Heparin bridge)', cht: '可化凝' },
   { name: 'ASPIRIN', atc: 'B01AC06', days: '5-7 天/不需停', category: 'Antiplatelet', note: '依手術風險而定', cht: '阿斯匹靈' },
   { name: 'BOKEY', atc: 'B01AC06', days: '5-7 天/不需停', category: 'Antiplatelet', note: '依手術風險而定', cht: '伯基' },
   { name: 'PLETAAL', atc: 'B01AC23', days: '3 天', category: 'Antiplatelet', note: 'Cilostazol', cht: '普達' },

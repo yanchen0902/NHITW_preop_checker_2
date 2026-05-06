@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "術前高風險藥物警示與列印",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "於健保雲端西藥頁面中，自動掃描並過濾近三個月的 SGLT2、抗凝血劑等術前高風險藥物，並提供去識別化列印功能。",
   "action": {
     "default_icon": "icon128.png"
