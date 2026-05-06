@@ -11,6 +11,45 @@
 - 🖨️ **一鍵列印**：將混亂的藥歷轉換成排版乾淨、自動去識別化的列印報表，方便直接夾入紙本病歷排刀。
 - 🎯 **針對性警示**：專注於麻醉與外科手術最在意的藥物種類（如：可能造成低血壓的血壓藥、可能造成酮酸中毒的 SGLT2、影響凝血功能的抗凝劑）。
 
+## 💊 術前高風險藥物停藥規則表 (Pre-op Medication Rules)
+
+系統內建以下高風險藥物的自動辨識與停藥建議規則。請注意，部分規則（如 Metformin）採動態關鍵字與 ATC 代碼比對，涵蓋範圍更廣：
+
+| 藥物類別 (Category) | 成分學名 (Generic Name) | 常見商品名 (Brand Name) | ATC 代碼 | 停藥天數 (Days) | 備註說明 (Note) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Metformin** | Metformin | *(多廠牌)* | A10BA02 | **1 天** | 含 Metformin 成分口服降血糖藥，建議術前一天停藥 |
+| **SGLT2i** | Ertugliflozin | Steglujan (釋糖健) | A10BD23 | 4 天 | 複方(含 Sitagliptin)，需停 4 天 |
+| **SGLT2i** | Dapagliflozin | Forxiga (福適佳) | A10BK01 | 3 天 | |
+| **SGLT2i** | Empagliflozin | Jardiance (恩排糖) | A10BK03 | 3 天 | |
+| **SGLT2i** | Canagliflozin | Canaglu (可拿糖), Invokana (穩可糖) | A10BK02 | 3 天 | |
+| **SGLT2i** | Empagliflozin/Linagliptin | Glyxambi (恩格醣) | A10BD19 | 3 天 | 複方 |
+| **SGLT2i** | Dapagliflozin/Saxagliptin | Qtern (控糖穩) | A10BD21 | 3 天 | 複方 |
+| **SGLT2i** | Dapagliflozin/Metformin | Xigduo (釋多糖) | A10BD15 | 3 天 | 複方 |
+| **SGLT2i** | Empagliflozin/Metformin | Synjardy (恩美糖) | A10BD20 | 3 天 | 複方 |
+| **GLP-1 RA** | Semaglutide | Ozempic (胰妥讚), Rybelsus (瑞倍適) | A10BJ05, A10BJ06 | 7 天 | 前一日全天清流質飲食 |
+| **GLP-1 RA** | Liraglutide | Victoza (胰妥善), Saxenda (善纖達) | A10BJ02 | 7 天 | 前一日全天清流質飲食 |
+| **GLP-1 RA** | Dulaglutide | Trulicity (易週糖) | A10BJ05 | 7 天 | 前一日全天清流質飲食 |
+| **GLP-1 RA** | Tirzepatide | Mounjaro (蒙加若) | A10BJ07 | 7 天 | 前一日全天清流質飲食 (GLP-1/GIP) |
+| **GLP-1 RA** | Exenatide | Byetta (百泌達), Bydureon (百達揚) | A10BJ01 | 7 天 | 前一日全天清流質飲食 |
+| **P2Y12** | Ticlopidine | Licodin (力抗栓) | B01AC05 | 10 天 | |
+| **P2Y12** | Prasugrel | Efient (抑凝安) | B01AC22 | 7 天 | (規範標註 5-7 天) |
+| **P2Y12** | Clopidogrel | Plavix (保栓通) | B01AC04 | 5 天 | (規範標註 5-7 天) |
+| **P2Y12** | Ticagrelor | Brilinta (百無凝) | B01AC24 | 5 天 | (規範標註 5-7 天) |
+| **VKA** | Warfarin | Cofarin (可化凝) | B01AA03 | 5-7 天 | |
+| **Antiplatelet**| Aspirin | Bokey (伯基), Aspirin (阿斯匹靈) | B01AC06 | 5-7 天/不需停 | 依手術風險而定 |
+| **Antiplatelet**| Cilostazol | Pletaal (普達) | B01AC23 | 3 天 | |
+| **Antiplatelet**| Dipyridamole | Sandel (順達) | B01AC07 | 3 天 | |
+| **NOAC** | Apixaban | Eliquis (艾必克凝) | B01AF02 | 2 天 | |
+| **NOAC** | Dabigatran | Pradaxa (普泰達) | B01AE07 | 2 天 | |
+| **NOAC** | Edoxaban | Lixiana (里先安) | B01AF03 | 2 天 | |
+| **NOAC** | Rivaroxaban | Xarelto (拜瑞妥) | B01AF01 | 2 天 | |
+| **Heparin** | Enoxaparin | Clexane (克立生) | B01AB05 | 24 小時 | |
+| **Heparin** | Unfractionated Heparin | Heparin (肝素) | B01AB01 | 12 小時 | |
+| **Lipid** | Fenofibrate | Lipanthyl (弗尼利) | C10AB05 | 24 小時 | |
+| **Lipid** | Gemfibrozil | Lopid (洛必得) | C10AB01 | 24 小時 | |
+| **Herbal** | Ginkgo Biloba | Gincare (循利寧) | N06DX02 | 36 小時 | 銀杏 |
+| **ACEI/ARB** | ACEI / ARB 類 | *(多廠牌血壓藥)* | C09 | 手術當天早上暫停 | 降血壓用藥 |
+
 ## 🚀 安裝方式
 
 目前您可以透過兩種方式安裝此擴充功能：

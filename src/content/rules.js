@@ -47,5 +47,7 @@ export const PRE_OP_ALERTS = [
   { name: 'MOUNJARO', atc: 'A10BJ07', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '蒙加若' },
   { name: 'SAXENDA', atc: 'A10BJ02', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '善纖達' },
   { name: 'RYBELSUS', atc: 'A10BJ05', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '瑞倍適' },
-  { name: 'VICTOZA', atc: 'A10BJ02', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '胰妥善' }
+  { name: 'VICTOZA', atc: 'A10BJ02', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '胰妥善' },
+  { name: 'BYETTA', atc: 'A10BJ01', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '百泌達' },
+  { name: 'BYDUREON', atc: 'A10BJ01', days: '7 天', category: 'GLP-1 RA', note: '前一日全天清流質飲食', cht: '百達揚' }
 ];

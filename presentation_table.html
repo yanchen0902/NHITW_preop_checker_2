@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>術前高風險藥物停藥規則表</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, '微軟正黑體', sans-serif;
+            background-color: #f8f9fa;
+            padding: 40px;
+            color: #333;
+        }
+        .table-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            overflow: hidden;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #343a40;
+            color: #ffffff;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            white-space: nowrap;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        /* Row Colors by Category */
+        .cat-metformin { background-color: #fff3cd; } /* 淡黃 */
+        .cat-sglt2i { background-color: #ffe8cc; } /* 淡橘 */
+        .cat-p2y12 { background-color: #cce5ff; } /* 淡藍 */
+        .cat-antiplatelet { background-color: #d1ecf1; } /* 淺青 */
+        .cat-vka { background-color: #f8d7da; } /* 淺粉紅 */
+        .cat-noac { background-color: #f5c6cb; } /* 粉紅 */
+        .cat-heparin { background-color: #e2d9f3; } /* 淺紫 */
+        .cat-lipid { background-color: #d4edda; } /* 淺綠 */
+        .cat-herbal { background-color: #c3e6cb; } /* 綠 */
+        .cat-acei-arb { background-color: #e8daef; } /* 紫 */
+        .cat-glp1 { background-color: #ffdfba; } /* 蜜桃橘 */
+
+        .category-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            background: rgba(255,255,255,0.6);
+            border: 1px solid rgba(0,0,0,0.1);
+            white-space: nowrap;
+        }
+        .generic-name {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .brand-name {
+            color: #555;
+            font-size: 15px;
+        }
+        .days-highlight {
+            font-weight: bold;
+            color: #d32f2f;
+            white-space: nowrap;
+        }
+        .atc-code {
+            font-family: monospace;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <h2>💊 術前高風險藥物停藥規則表 (Pre-op Medication Rules)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th width="12%">藥物類別</th>
+                <th width="20%">成分學名 (Generic Name)</th>
+                <th width="25%">常見商品名 (Brand Name)</th>
+                <th width="10%">ATC 代碼</th>
+                <th width="13%">停藥天數</th>
+                <th width="20%">備註說明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 降血糖類 -->
+            <tr class="cat-metformin">
+                <td><span class="category-badge">Metformin</span></td>
+                <td class="generic-name">Metformin</td>
+                <td class="brand-name"><i>(多種廠牌)</i></td>
+                <td class="atc-code">A10BA02</td>
+                <td class="days-highlight">1 天</td>
+                <td>含 Metformin 成分口服降血糖藥，建議術前一天停藥</td>
+            </tr>
+            <tr class="cat-sglt2i">
+                <td><span class="category-badge">SGLT2i</span></td>
+                <td class="generic-name">Ertugliflozin / Sitagliptin</td>
+                <td class="brand-name">Steglujan (釋糖健)</td>
+                <td class="atc-code">A10BD23</td>
+                <td class="days-highlight">4 天</td>
+                <td>複方 (需停 4 天)</td>
+            </tr>
+            <tr class="cat-sglt2i">
+                <td><span class="category-badge">SGLT2i</span></td>
+                <td class="generic-name">Dapagliflozin</td>
+                <td class="brand-name">Forxiga (福適佳)</td>
+                <td class="atc-code">A10BK01</td>
+                <td class="days-highlight">3 天</td>
+                <td></td>
+            </tr>
+            <tr class="cat-sglt2i">
+                <td><span class="category-badge">SGLT2i</span></td>
+                <td class="generic-name">Empagliflozin</td>
+                <td class="brand-name">Jardiance (恩排糖)</td>
+                <td class="atc-code">A10BK03</td>
+                <td class="days-highlight">3 天</td>
+                <td></td>
+            </tr>
+            <tr class="cat-sglt2i">
+                <td><span class="category-badge">SGLT2i</span></td>
+                <td class="generic-name">Canagliflozin</td>
+                <td class="brand-name">Canaglu (可拿糖)<br>Invokana (穩可糖)</td>
+                <td class="atc-code">A10BK02</td>
+                <td class="days-highlight">3 天</td>
+                <td></td>
+            </tr>
+            <tr class="cat-sglt2i">
+                <td><span class="category-badge">SGLT2i</span></td>
+                <td class="generic-name">Empagliflozin / Linagliptin</td>
+                <td class="brand-name">Glyxambi (恩格醣)</td>
+                <td class="atc-code">A10BD19</td>
+                <td class="days-highlight">3 天</td>
+                <td>複方</td>
+            </tr>
+            <tr class="cat-sglt2i">
+                <td><span class="category-badge">SGLT2i</span></td>
+                <td class="generic-name">Dapagliflozin / Saxagliptin</td>
+                <td class="brand-name">Qtern (控糖穩)</td>
+                <td class="atc-code">A10BD21</td>
+                <td class="days-highlight">3 天</td>
+                <td>複方</td>
+            </tr>
+            <tr class="cat-sglt2i">
+                <td><span class="category-badge">SGLT2i</span></td>
+                <td class="generic-name">Dapagliflozin / Metformin</td>
+                <td class="brand-name">Xigduo (釋多糖)</td>
+                <td class="atc-code">A10BD15</td>
+                <td class="days-highlight">3 天</td>
+                <td>複方</td>
+            </tr>
+            <tr class="cat-sglt2i">
+                <td><span class="category-badge">SGLT2i</span></td>
+                <td class="generic-name">Empagliflozin / Metformin</td>
+                <td class="brand-name">Synjardy (恩美糖)</td>
+                <td class="atc-code">A10BD20</td>
+                <td class="days-highlight">3 天</td>
+                <td>複方</td>
+            </tr>
+            
+            <!-- GLP-1 RA -->
+            <tr class="cat-glp1">
+                <td><span class="category-badge">GLP-1 RA</span></td>
+                <td class="generic-name">Semaglutide</td>
+                <td class="brand-name">Ozempic (胰妥讚)<br>Rybelsus (瑞倍適)</td>
+                <td class="atc-code">A10BJ05/06</td>
+                <td class="days-highlight">7 天</td>
+                <td>前一日全天清流質飲食</td>
+            </tr>
+            <tr class="cat-glp1">
+                <td><span class="category-badge">GLP-1 RA</span></td>
+                <td class="generic-name">Liraglutide</td>
+                <td class="brand-name">Victoza (胰妥善)<br>Saxenda (善纖達)</td>
+                <td class="atc-code">A10BJ02</td>
+                <td class="days-highlight">7 天</td>
+                <td>前一日全天清流質飲食</td>
+            </tr>
+            <tr class="cat-glp1">
+                <td><span class="category-badge">GLP-1 RA</span></td>
+                <td class="generic-name">Dulaglutide</td>
+                <td class="brand-name">Trulicity (易週糖)</td>
+                <td class="atc-code">A10BJ05</td>
+                <td class="days-highlight">7 天</td>
+                <td>前一日全天清流質飲食</td>
+            </tr>
+            <tr class="cat-glp1">
+                <td><span class="category-badge">GLP-1 RA</span></td>
+                <td class="generic-name">Tirzepatide</td>
+                <td class="brand-name">Mounjaro (蒙加若)</td>
+                <td class="atc-code">A10BJ07</td>
+                <td class="days-highlight">7 天</td>
+                <td>前一日全天清流質飲食 (GLP-1/GIP)</td>
+            </tr>
+            <tr class="cat-glp1">
+                <td><span class="category-badge">GLP-1 RA</span></td>
+                <td class="generic-name">Exenatide</td>
+                <td class="brand-name">Byetta (百泌達)<br>Bydureon (百達揚)</td>
+                <td class="atc-code">A10BJ01</td>
+                <td class="days-highlight">7 天</td>
+                <td>前一日全天清流質飲食</td>
+            </tr>
+
+            <!-- 抗凝血/抗血小板類 -->
+            <tr class="cat-p2y12">
+                <td><span class="category-badge">P2Y12</span></td>
+                <td class="generic-name">Ticlopidine</td>
+                <td class="brand-name">Licodin (力抗栓)</td>
+                <td class="atc-code">B01AC05</td>
+                <td class="days-highlight">10 天</td>
+                <td></td>
+            </tr>
+            <tr class="cat-p2y12">
+                <td><span class="category-badge">P2Y12</span></td>
+                <td class="generic-name">Prasugrel</td>
+                <td class="brand-name">Efient (抑凝安)</td>
+                <td class="atc-code">B01AC22</td>
+                <td class="days-highlight">7 天</td>
+                <td>(規範標註 5-7 天)</td>
+            </tr>
+            <tr class="cat-p2y12">
+                <td><span class="category-badge">P2Y12</span></td>
+                <td class="generic-name">Clopidogrel</td>
+                <td class="brand-name">Plavix (保栓通)</td>
+                <td class="atc-code">B01AC04</td>
+                <td class="days-highlight">5 天</td>
+                <td>(規範標註 5-7 天)</td>
+            </tr>
+            <tr class="cat-p2y12">
+                <td><span class="category-badge">P2Y12</span></td>
+                <td class="generic-name">Ticagrelor</td>
+                <td class="brand-name">Brilinta (百無凝)</td>
+                <td class="atc-code">B01AC24</td>
+                <td class="days-highlight">5 天</td>
+                <td>(規範標註 5-7 天)</td>
+            </tr>
+            <tr class="cat-vka">
+                <td><span class="category-badge">VKA</span></td>
+                <td class="generic-name">Warfarin</td>
+                <td class="brand-name">Cofarin (可化凝)</td>
+                <td class="atc-code">B01AA03</td>
+                <td class="days-highlight">5-7 天</td>
+                <td></td>
+            </tr>
+            <tr class="cat-antiplatelet">
+                <td><span class="category-badge">Antiplatelet</span></td>
+                <td class="generic-name">Aspirin</td>
+                <td class="brand-name">Bokey (伯基)<br>Aspirin (阿斯匹靈)</td>
+                <td class="atc-code">B01AC06</td>
+                <td class="days-highlight">5-7 天 / 不需停</td>
+                <td>依手術風險而定</td>
+            </tr>
+            <tr class="cat-antiplatelet">
+                <td><span class="category-badge">Antiplatelet</span></td>
+                <td class="generic-name">Cilostazol</td>
+                <td class="brand-name">Pletaal (普達)</td>
+                <td class="atc-code">B01AC23</td>
+                <td class="days-highlight">3 天</td>
+                <td></td>
+            </tr>
+            <tr class="cat-antiplatelet">
+                <td><span class="category-badge">Antiplatelet</span></td>
+                <td class="generic-name">Dipyridamole</td>
+                <td class="brand-name">Sandel (順達)</td>
+                <td class="atc-code">B01AC07</td>
+                <td class="days-highlight">3 天</td>
+                <td></td>
+            </tr>
+            <tr class="cat-noac">
+                <td><span class="category-badge">NOAC</span></td>
+                <td class="generic-name">Apixaban</td>
+                <td class="brand-name">Eliquis (艾必克凝)</td>
+                <td class="atc-code">B01AF02</td>
+                <td class="days-highlight">2 天</td>
+                <td></td>
+            </tr>
+            <tr class="cat-noac">
+                <td><span class="category-badge">NOAC</span></td>
+                <td class="generic-name">Dabigatran</td>
+                <td class="brand-name">Pradaxa (普泰達)</td>
+                <td class="atc-code">B01AE07</td>
+                <td class="days-highlight">2 天</td>
+                <td></td>
+            </tr>
+            <tr class="cat-noac">
+                <td><span class="category-badge">NOAC</span></td>
+                <td class="generic-name">Edoxaban</td>
+                <td class="brand-name">Lixiana (里先安)</td>
+                <td class="atc-code">B01AF03</td>
+                <td class="days-highlight">2 天</td>
+                <td></td>
+            </tr>
+            <tr class="cat-noac">
+                <td><span class="category-badge">NOAC</span></td>
+                <td class="generic-name">Rivaroxaban</td>
+                <td class="brand-name">Xarelto (拜瑞妥)</td>
+                <td class="atc-code">B01AF01</td>
+                <td class="days-highlight">2 天</td>
+                <td></td>
+            </tr>
+            <tr class="cat-heparin">
+                <td><span class="category-badge">Heparin</span></td>
+                <td class="generic-name">Enoxaparin</td>
+                <td class="brand-name">Clexane (克立生)</td>
+                <td class="atc-code">B01AB05</td>
+                <td class="days-highlight">24 小時</td>
+                <td></td>
+            </tr>
+            <tr class="cat-heparin">
+                <td><span class="category-badge">Heparin</span></td>
+                <td class="generic-name">Unfractionated Heparin</td>
+                <td class="brand-name">Heparin (肝素)</td>
+                <td class="atc-code">B01AB01</td>
+                <td class="days-highlight">12 小時</td>
+                <td></td>
+            </tr>
+
+            <!-- 其他心血管/血脂/保健品 -->
+            <tr class="cat-acei-arb">
+                <td><span class="category-badge">ACEI/ARB</span></td>
+                <td class="generic-name">ACEI / ARB 類</td>
+                <td class="brand-name"><i>(多種廠牌血壓藥)</i></td>
+                <td class="atc-code">C09</td>
+                <td class="days-highlight">當天早上暫停</td>
+                <td>降血壓用藥</td>
+            </tr>
+            <tr class="cat-lipid">
+                <td><span class="category-badge">Lipid</span></td>
+                <td class="generic-name">Fenofibrate</td>
+                <td class="brand-name">Lipanthyl (弗尼利)</td>
+                <td class="atc-code">C10AB05</td>
+                <td class="days-highlight">24 小時</td>
+                <td></td>
+            </tr>
+            <tr class="cat-lipid">
+                <td><span class="category-badge">Lipid</span></td>
+                <td class="generic-name">Gemfibrozil</td>
+                <td class="brand-name">Lopid (洛必得)</td>
+                <td class="atc-code">C10AB01</td>
+                <td class="days-highlight">24 小時</td>
+                <td></td>
+            </tr>
+            <tr class="cat-herbal">
+                <td><span class="category-badge">Herbal</span></td>
+                <td class="generic-name">Ginkgo Biloba</td>
+                <td class="brand-name">Gincare (循利寧)</td>
+                <td class="atc-code">N06DX02</td>
+                <td class="days-highlight">36 小時</td>
+                <td>銀杏</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
